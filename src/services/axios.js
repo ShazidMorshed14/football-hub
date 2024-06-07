@@ -2,7 +2,7 @@ import axios from "axios";
 
 // create axios instance
 
-export default (baseURL = "https://v3.football.api-sports.io/") => {
+export default (baseURL = "https://transfermarkt-db.p.rapidapi.com/v1") => {
   const instance = axios.create({
     baseURL,
   });
@@ -13,8 +13,8 @@ export default (baseURL = "https://v3.football.api-sports.io/") => {
       "Content-Type": config.headers["Content-Type"]
         ? config.headers["Content-Type"]
         : "application/json",
-      "x-rapidapi-key": "796a0f2dacmsh7e7c2e4712f9604p1d59b7jsn4d3d27d248f1",
-      "x-rapidapi-host": "v3.football.api-sports.io",
+      "x-rapidapi-key": "be6a7ad5a0msh53ae27cef88c26fp1e1948jsn1ad0128f6c29",
+      "x-rapidapi-host": "transfermarkt-db.p.rapidapi.com",
     };
     return config;
   });
