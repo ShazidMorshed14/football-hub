@@ -13,9 +13,19 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { useNavigate } from "react-router-dom";
-import { Add } from "@mui/icons-material";
+import { InputOutlined } from "@mui/icons-material";
+import SearchIcon from "@mui/icons-material/Search";
+import { TextField } from "@mui/material";
+
+import AddIcon from "@mui/icons-material/Add";
+import GroupsIcon from "@mui/icons-material/Groups";
+import SportsSoccerIcon from "@mui/icons-material/SportsSoccer";
 
 const pages = [
+  {
+    title: "My Team",
+    route: "/my-team",
+  },
   {
     title: "Create Team",
     route: "/create-team",
@@ -49,7 +59,13 @@ function Header() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <SportsSoccerIcon
+            sx={{
+              display: { xs: "none", md: "flex" },
+              mr: 1,
+              color: "darkorange",
+            }}
+          />
           <Typography
             variant="h6"
             noWrap
@@ -108,7 +124,13 @@ function Header() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <SportsSoccerIcon
+            sx={{
+              display: { xs: "flex", md: "none" },
+              mr: 1,
+              color: "darkorange",
+            }}
+          />
           <Typography
             variant="h5"
             noWrap
@@ -123,30 +145,51 @@ function Header() {
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
+              cursor: "pointer",
             }}
           >
             FootballHub
           </Typography>
 
-          <Box sx={{ marginLeft: "auto", display: "flex", gap: "15px" }}>
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box
+            sx={{
+              marginLeft: "auto",
+              display: "flex",
+              gap: "15px",
+              alignItems: "center",
+            }}
+          >
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: { xs: "none", md: "flex", gap: "15px" },
+              }}
+            >
               {pages.map((page, index) => (
                 <Button
                   key={index}
                   onClick={() => handleCloseNavMenu(page?.route)}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  variant={index == 1 ? "contained" : "outlined"}
+                  startIcon={index === 1 ? <AddIcon /> : <GroupsIcon />}
+                  sx={{
+                    color: "white",
+                    backgroundColor: index == 1 ? "darkorange" : "",
+                    "&:hover": {
+                      backgroundColor: index == 1 ? "darkorange" : "",
+                    },
+                  }}
                 >
                   {page?.title}
                 </Button>
               ))}
             </Box>
-            <Tooltip title="Open settings">
+            <Tooltip title="Search here...">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <SearchIcon />
               </IconButton>
             </Tooltip>
             <Menu
-              sx={{ mt: "45px" }}
+              sx={{ mt: "45px", width: "500px" }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
@@ -160,12 +203,29 @@ function Header() {
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
+              PaperProps={{
+                style: {
+                  maxHeight: "500px",
+                  width: "600px",
+                },
+              }}
             >
-              {settings.map((setting) => (
+              <MenuItem>
+                <TextField
+                  id="outlined-basic"
+                  label="Search Player"
+                  variant="outlined"
+                  placeholder="Search player..."
+                  fullWidth
+                  size="sm"
+                  color="warning"
+                />
+              </MenuItem>
+              {/* {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
-              ))}
+              ))} */}
             </Menu>
           </Box>
         </Toolbar>
