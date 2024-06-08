@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   GetCategorywisePlayers,
   GetCategorywisePlayersDummy,
@@ -15,12 +15,11 @@ const CategorywisePlayers = ({ type, expectedType }) => {
 
   const { data, isLoading, isFetching, refetch, error } = useQuery({
     queryKey: ["categorywise-players", type],
-    queryFn: () =>
+    queryFn: async () =>
       GetCategorywisePlayersDummy({
         locale: "ES",
         sort_by: "popular",
         page_number: page,
-        page_size: 10,
         position_group: type == "ALL" ? null : type,
       }),
     refetchOnWindowFocus: false,
@@ -31,6 +30,23 @@ const CategorywisePlayers = ({ type, expectedType }) => {
       console.log(error);
     },
   });
+
+  const handleScroll = () => {
+    console.log("height:", document.documentElement.scrollHeight);
+    console.log("top:", document.documentElement.scrollTop);
+    console.log("window:", window.innerHeight);
+
+    if (
+      window.innerHeight + document.documentElement.scrollTop + 1 >=
+      document.documentElement.scrollHeight
+    ) {
+      // setPage((prev) => prev + 1);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, []);
 
   if (isLoading)
     return (
@@ -73,7 +89,7 @@ const CategorywisePlayers = ({ type, expectedType }) => {
             {data?.map((player, index) => {
               return (
                 <Grid item xs={6} sm={6} md={4} lg={3} key={index}>
-                  <SmallDescCard player={player} />
+                  <SmallDescCard player={player} category={type} />
                 </Grid>
               );
             })}
