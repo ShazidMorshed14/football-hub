@@ -1,52 +1,58 @@
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import React, { useEffect, useState } from "react";
 import {
   GetCategorywisePlayers,
   GetCategorywisePlayersDummy,
 } from "../../services/players";
-import { Box, Grid, Paper, Stack, Typography } from "@mui/material";
+import { Box, Grid, Paper, Skeleton, Stack, Typography } from "@mui/material";
 import AnimatedLoader from "../global/AnimatedLoader";
 import { isArrayAndHasContent } from "../../utils/utils";
 import NoDataPlaceholder from "../global/NoDataPlaceholder";
 import SmallDescCard from "../cards/SmallDescCard";
+import { useInView } from "react-intersection-observer";
+import InfiniteScroll from "react-infinite-scroll-component";
+import TodoCard from "../global/TodoCard";
 
 const CategorywisePlayers = ({ type, expectedType }) => {
-  const [page, setPage] = useState(1);
+  const { ref, inView } = useInView();
 
-  const { data, isLoading, isFetching, refetch, error } = useQuery({
-    queryKey: ["categorywise-players", type],
-    queryFn: async () =>
-      GetCategorywisePlayersDummy({
-        locale: "ES",
-        sort_by: "popular",
-        page_number: page,
+  const [countryIds, setCountryIds] = useState(null);
+
+  const {
+    data,
+    status,
+    error,
+    fetchNextPage,
+    isFetchingNextPage,
+    hasNextPage,
+    isLoading,
+  } = useInfiniteQuery({
+    queryKey: ["categorywise-players", type, countryIds],
+    queryFn: ({ pageParam = 1 }) =>
+      GetCategorywisePlayers({
+        pageParam: pageParam,
         position_group: type == "ALL" ? null : type,
+        country_ids: countryIds,
       }),
-    refetchOnWindowFocus: false,
-    keepPreviousData: true,
-    retry: false,
+    getNextPageParam: (lastPage, allPages) => {
+      const nextPage = lastPage.length ? allPages.length + 1 : undefined;
+      return nextPage;
+    },
     enabled: type === expectedType,
     onError: (error) => {
       console.log(error);
     },
   });
 
-  const handleScroll = () => {
-    console.log("height:", document.documentElement.scrollHeight);
-    console.log("top:", document.documentElement.scrollTop);
-    console.log("window:", window.innerHeight);
-
-    if (
-      window.innerHeight + document.documentElement.scrollTop + 1 >=
-      document.documentElement.scrollHeight
-    ) {
-      // setPage((prev) => prev + 1);
-    }
-  };
+  console.log(data);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-  }, []);
+    if (inView && hasNextPage) {
+      console.log("Fire!");
+      fetchNextPage();
+    }
+  }, [inView, hasNextPage, fetchNextPage]);
+  console.log(inView);
 
   if (isLoading)
     return (
@@ -75,24 +81,44 @@ const CategorywisePlayers = ({ type, expectedType }) => {
       </div>
     );
 
-  console.log(data);
+  const content = data?.pages.map((players) =>
+    players.map((player, index) => {
+      if (players.length === index + 1) {
+        return (
+          <Grid item xs={6} sm={6} md={4} lg={3} key={player.id}>
+            <SmallDescCard
+              innerRef={ref}
+              key={players.id}
+              player={players}
+              category={type}
+            />
+          </Grid>
+        );
+      }
+      return (
+        <Grid item xs={6} sm={6} md={4} lg={3} key={player.id}>
+          <SmallDescCard key={player.id} player={player} category={type} />
+        </Grid>
+      );
+    })
+  );
+
   return (
-    <div>
+    <div style={{ minHeight: "200vh" }}>
       {/* {type} */}
-      {isArrayAndHasContent(data) ? (
+      {isArrayAndHasContent(data?.pages) ? (
         <Box>
           <Grid
             container
             spacing={{ xs: 2, md: 3 }}
             columns={{ xs: 12, sm: 12, md: 12, lg: 12 }}
           >
-            {data?.map((player, index) => {
-              return (
-                <Grid item xs={6} sm={6} md={4} lg={3} key={index}>
-                  <SmallDescCard player={player} category={type} />
-                </Grid>
-              );
-            })}
+            {content}
+            {!isFetchingNextPage && (
+              <Grid item xs={6} sm={6} md={4} lg={3} key={"loader"}>
+                <Skeleton variant="rectangular" width={300} height={450} />
+              </Grid>
+            )}
           </Grid>
         </Box>
       ) : (

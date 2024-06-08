@@ -13,6 +13,7 @@ import PlayerProfile from "../pages/PlayerProfile/PlayerProfile";
 import MyTeam from "../pages/MyTeam/MyTeam";
 import ReduxWrapper from "./ReduxWrapper";
 import NoPageFound from "../pages/NoPageFound/NoPageFound";
+import Articles from "../components/global/Articles";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
               <Route exact path="/my-team" element={<MyTeam />} />
               <Route exact path="/search" element={<SearchPage />} />
               <Route exact path="/player/:id" element={<PlayerProfile />} />
+              <Route exact path="/articles" element={<Articles />} />
               <Route path="*" element={<NoPageFound />} />
             </Routes>
           </Router>

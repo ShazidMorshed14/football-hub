@@ -15,9 +15,9 @@ import {
 } from "../../utils/utils";
 import PanToolIcon from "@mui/icons-material/PanTool";
 
-const SmallDescCard = ({ player, category }) => {
+const SmallDescCard = ({ player, category, innerRef }) => {
   return (
-    <div>
+    <div ref={innerRef}>
       <Card
         sx={{ cursor: "pointer", borderRadius: "8px", position: "relative" }}
         elevation={2}
