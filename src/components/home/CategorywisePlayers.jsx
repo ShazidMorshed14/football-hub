@@ -13,10 +13,15 @@ import { useInView } from "react-intersection-observer";
 import InfiniteScroll from "react-infinite-scroll-component";
 import TodoCard from "../global/TodoCard";
 
-const CategorywisePlayers = ({ type, expectedType }) => {
+const CategorywisePlayers = ({
+  type,
+  expectedType,
+  countryIds,
+  clubIds,
+  marketValue,
+  age,
+}) => {
   const { ref, inView } = useInView();
-
-  const [countryIds, setCountryIds] = useState(null);
 
   const {
     data,
@@ -27,12 +32,22 @@ const CategorywisePlayers = ({ type, expectedType }) => {
     hasNextPage,
     isLoading,
   } = useInfiniteQuery({
-    queryKey: ["categorywise-players", type, countryIds],
+    queryKey: [
+      "categorywise-players",
+      type,
+      countryIds,
+      clubIds,
+      marketValue,
+      age,
+    ],
     queryFn: ({ pageParam = 1 }) =>
-      GetCategorywisePlayers({
+      GetCategorywisePlayersDummy({
         pageParam: pageParam,
         position_group: type == "ALL" ? null : type,
         country_ids: countryIds,
+        club_ids: clubIds,
+        market_value_max: marketValue,
+        age_max: age,
       }),
     getNextPageParam: (lastPage, allPages) => {
       const nextPage = lastPage.length ? allPages.length + 1 : undefined;
@@ -52,7 +67,6 @@ const CategorywisePlayers = ({ type, expectedType }) => {
       fetchNextPage();
     }
   }, [inView, hasNextPage, fetchNextPage]);
-  console.log(inView);
 
   if (isLoading)
     return (

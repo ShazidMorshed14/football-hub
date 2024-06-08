@@ -50,7 +50,11 @@ const SmallDescCard = ({ player, category, innerRef }) => {
         <CardMedia
           component="img"
           height={"300"}
-          image={player?.playerInfo?.image}
+          image={
+            player?.playerInfo?.image
+              ? player?.playerInfo?.image
+              : "https://cdn-icons-png.flaticon.com/512/21/21104.png"
+          }
           alt="Paella dish"
           aria-setsize="center"
         />
