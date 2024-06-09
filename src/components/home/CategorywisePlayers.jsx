@@ -101,7 +101,7 @@ const CategorywisePlayers = ({
     players.map((player, index) => {
       if (players.length === index + 1) {
         return (
-          <Grid item xs={6} sm={6} md={4} lg={3} key={player.id}>
+          <Grid item xs={12} sm={12} md={4} lg={3} key={player.id}>
             <SmallDescCard
               innerRef={ref}
               key={players.id}
@@ -114,7 +114,7 @@ const CategorywisePlayers = ({
         );
       }
       return (
-        <Grid item xs={6} sm={6} md={4} lg={3} key={player.id}>
+        <Grid item xs={12} sm={12} md={4} lg={3} key={player.id}>
           <SmallDescCard
             key={player.id}
             player={player}
@@ -141,7 +141,7 @@ const CategorywisePlayers = ({
           >
             {content}
             {!isFetchingNextPage && (
-              <Grid item xs={6} sm={6} md={4} lg={3} key={"loader"}>
+              <Grid item xs={12} sm={12} md={4} lg={3} key={"loader"}>
                 <Skeleton variant="rectangular" width={300} height={450} />
               </Grid>
             )}

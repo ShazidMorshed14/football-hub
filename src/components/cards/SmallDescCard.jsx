@@ -61,7 +61,7 @@ const SmallDescCard = ({
 
         <CardMedia
           component="img"
-          height={isMobile ? "200" : "300"}
+          height={isMobile ? "300" : "300"}
           image={
             player?.playerInfo?.image
               ? player?.playerInfo?.image

@@ -15,7 +15,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 import { useNavigate } from "react-router-dom";
 import { InputOutlined } from "@mui/icons-material";
 import SearchIcon from "@mui/icons-material/Search";
-import { Stack, TextField } from "@mui/material";
+import { Stack, TextField, useMediaQuery } from "@mui/material";
 
 import AddIcon from "@mui/icons-material/Add";
 import GroupsIcon from "@mui/icons-material/Groups";
@@ -38,6 +38,8 @@ const settings = ["Profile", "Account", "Dashboard", "Logout"];
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const isMobile = useMediaQuery("(max-width:600px)");
 
   const navigate = useNavigate();
 
@@ -208,7 +210,7 @@ function Header() {
               PaperProps={{
                 style: {
                   maxHeight: "500px",
-                  width: "600px",
+                  width: isMobile ? "500px" : "600px",
                 },
               }}
             >
