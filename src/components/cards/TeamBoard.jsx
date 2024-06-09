@@ -51,7 +51,13 @@ const TeamBoard = ({ formation, setTeamViewModal, team }) => {
         py="30px"
         px="5px"
       >
-        <Stack direction="row" justifyContent="space-around">
+        <Stack
+          direction="row"
+          justifyContent="space-around"
+          style={{
+            minHeight: "15vh",
+          }}
+        >
           {isArrayAndHasContent(
             team?.filter((item) => item.category == "FORWARD")
           )
@@ -63,7 +69,14 @@ const TeamBoard = ({ formation, setTeamViewModal, team }) => {
             : null}
         </Stack>
 
-        <Stack direction="row" justifyContent="space-around" my="4em">
+        <Stack
+          direction="row"
+          justifyContent="space-around"
+          my="4em"
+          style={{
+            minHeight: "15vh",
+          }}
+        >
           {isArrayAndHasContent(
             team?.filter((item) => item.category == "MIDFIELDER")
           )
