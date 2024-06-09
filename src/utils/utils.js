@@ -57,3 +57,18 @@ export function getPlayerClubDetails(id) {
 
   return result;
 }
+
+export function createFormationObject(formationString) {
+  // Split the formation string into an array of numbers
+  const formationArray = formationString.split("-").map(Number);
+
+  // Create the object with the counts of each position
+  const formationObject = {
+    DEFENDER: formationArray[0] || 0,
+    MIDFIELDER: formationArray[1] || 0,
+    FORWARD: formationArray[2] || 0,
+    GOALKEEPER: 1, // Goalkeeper is always 1
+  };
+
+  return formationObject;
+}
