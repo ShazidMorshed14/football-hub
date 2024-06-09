@@ -1,10 +1,32 @@
 import { Close } from "@mui/icons-material";
 import Field from "../../assets/field.svg";
 
-import { Fab, Paper, Stack, Typography } from "@mui/material";
-import React from "react";
+import {
+  Box,
+  Drawer,
+  Fab,
+  Modal,
+  Paper,
+  Stack,
+  Typography,
+} from "@mui/material";
+import React, { useState } from "react";
 import { isArrayAndHasContent } from "../../utils/utils";
 import PlayerIcon from "./PlayerIcon";
+import { useNavigate } from "react-router-dom";
+import PlayerDetailsPopupCard from "./PlayerDetailsPopupCard";
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 350,
+  height: "auto",
+  bgcolor: "transparent",
+
+  boxShadow: 24,
+};
 
 const TeamBoardOnlyView = ({
   formation,
@@ -13,6 +35,12 @@ const TeamBoardOnlyView = ({
   setTeamViewModal,
 }) => {
   let handlePlayerRemoveFromTeam = (id, category) => {};
+
+  const navigate = useNavigate();
+
+  const [selectedPlayer, setSelectedPlayer] = useState(null);
+  const [openDetailsModal, setOpenDetailsModal] = React.useState(false);
+
   return (
     <div
       style={{
@@ -24,6 +52,26 @@ const TeamBoardOnlyView = ({
         position: "relative",
       }}
     >
+      <Modal
+        open={openDetailsModal && selectedPlayer}
+        onClose={() => {
+          setSelectedPlayer(null);
+          setOpenDetailsModal(false);
+        }}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <PlayerDetailsPopupCard
+            player={selectedPlayer}
+            handleClose={() => {
+              setSelectedPlayer(null);
+              setOpenDetailsModal(false);
+            }}
+          />
+        </Box>
+      </Modal>
+
       <div
         style={{
           position: "absolute",
@@ -73,12 +121,20 @@ const TeamBoardOnlyView = ({
                 ?.filter((item) => item.category == "FORWARD")
                 ?.map((player, index) => {
                   return (
-                    <PlayerIcon
-                      key={index}
-                      player={player}
-                      handlePlayerRemoveFromTeam={handlePlayerRemoveFromTeam}
-                      hideDelete
-                    />
+                    <div
+                      onClick={() => {
+                        setSelectedPlayer(player);
+                        setOpenDetailsModal(true);
+                      }}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <PlayerIcon
+                        key={index}
+                        player={player}
+                        handlePlayerRemoveFromTeam={handlePlayerRemoveFromTeam}
+                        hideDelete
+                      />
+                    </div>
                   );
                 })
             : null}
@@ -99,12 +155,20 @@ const TeamBoardOnlyView = ({
                 ?.filter((item) => item.category == "MIDFIELDER")
                 ?.map((player, index) => {
                   return (
-                    <PlayerIcon
-                      key={index}
-                      player={player}
-                      handlePlayerRemoveFromTeam={handlePlayerRemoveFromTeam}
-                      hideDelete
-                    />
+                    <div
+                      onClick={() => {
+                        setSelectedPlayer(player);
+                        setOpenDetailsModal(true);
+                      }}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <PlayerIcon
+                        key={index}
+                        player={player}
+                        handlePlayerRemoveFromTeam={handlePlayerRemoveFromTeam}
+                        hideDelete
+                      />
+                    </div>
                   );
                 })
             : null}
@@ -118,12 +182,20 @@ const TeamBoardOnlyView = ({
                 ?.filter((item) => item.category == "DEFENDER")
                 ?.map((player, index) => {
                   return (
-                    <PlayerIcon
-                      key={index}
-                      player={player}
-                      handlePlayerRemoveFromTeam={handlePlayerRemoveFromTeam}
-                      hideDelete
-                    />
+                    <div
+                      onClick={() => {
+                        setSelectedPlayer(player);
+                        setOpenDetailsModal(true);
+                      }}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <PlayerIcon
+                        key={index}
+                        player={player}
+                        handlePlayerRemoveFromTeam={handlePlayerRemoveFromTeam}
+                        hideDelete
+                      />
+                    </div>
                   );
                 })
             : null}
@@ -141,9 +213,14 @@ const TeamBoardOnlyView = ({
                       position: "absolute",
                       bottom: "15px",
                       left: "43%",
+                      cursor: "pointer",
                     }}
                     key={index}
                     player={player}
+                    onClick={() => {
+                      setSelectedPlayer(player);
+                      setOpenDetailsModal(true);
+                    }}
                   >
                     <PlayerIcon
                       player={player}

@@ -1,9 +1,11 @@
 import {
+  Avatar,
   Box,
   Button,
   Card,
   CardContent,
   CardMedia,
+  Fab,
   Stack,
   Typography,
   useMediaQuery,
@@ -17,19 +19,30 @@ import {
 } from "../../utils/utils";
 import PanToolIcon from "@mui/icons-material/PanTool";
 import { useNavigate } from "react-router-dom";
+import { Close } from "@mui/icons-material";
 
-const SmallDescCard = ({
-  player,
-  category,
-  innerRef,
-  createTeamEnable,
-  addPlayerToTeam,
-}) => {
+const PlayerDetailsPopupCard = ({ player, handleClose }) => {
   const navigate = useNavigate();
   const isMobile = useMediaQuery("(max-width:600px)");
 
   return (
-    <div ref={innerRef}>
+    <div>
+      <div
+        style={{
+          position: "absolute",
+          top: "5px",
+          right: "25px",
+        }}
+      >
+        <Fab
+          size="small"
+          color="white"
+          aria-label="close"
+          onClick={() => handleClose()}
+        >
+          <Close />
+        </Fab>
+      </div>
       <Card
         sx={{ cursor: "pointer", borderRadius: "8px", position: "relative" }}
         elevation={2}
@@ -40,7 +53,7 @@ const SmallDescCard = ({
           </div>
         )}
 
-        {category !== "ALL" && (
+        {player?.category !== "ALL" && (
           <div
             style={{
               position: "absolute",
@@ -54,17 +67,17 @@ const SmallDescCard = ({
             }}
           >
             <Typography fontSize="0.7rem" component="div">
-              {category}
+              {player?.category || "N?A"}
             </Typography>
           </div>
         )}
 
         <CardMedia
           component="img"
-          height={isMobile ? "200" : "300"}
+          height={"120"}
           image={
-            player?.playerInfo?.image
-              ? player?.playerInfo?.image
+            player?.playerDetails?.playerInfo?.image
+              ? player?.playerDetails?.playerInfo?.image
               : "https://cdn-icons-png.flaticon.com/512/21/21104.png"
           }
           alt="Paella dish"
@@ -79,20 +92,27 @@ const SmallDescCard = ({
             }}
           >
             <Typography gutterBottom variant="h6" component="div">
-              {player?.playerInfo?.name
-                ? player?.playerInfo?.name?.length > 15
-                  ? `${player?.playerInfo?.name?.slice(0, 15)}...`
-                  : player?.playerInfo?.name
+              {player?.playerDetails?.playerInfo?.name
+                ? player?.playerDetails?.playerInfo?.name?.length > 15
+                  ? `${player?.playerDetails?.playerInfo?.name?.slice(
+                      0,
+                      15
+                    )}...`
+                  : player?.playerDetails?.playerInfo?.name
                 : "N/A"}
             </Typography>
 
-            {getPlayerClubDetails(player?.clubId) ? (
+            {getPlayerClubDetails(player?.playerDetails?.clubId) ? (
               <div
                 style={{
                   transform: "translateY(-35px)",
                 }}
               >
-                <img src={getPlayerClubDetails(player?.clubId)?.image} />
+                <img
+                  src={
+                    getPlayerClubDetails(player?.playerDetails?.clubId)?.image
+                  }
+                />
               </div>
             ) : null}
           </div>
@@ -105,18 +125,16 @@ const SmallDescCard = ({
               color="darkorange"
             >
               Market Value:{" "}
-              {player?.marketValue
-                ? `${convertToMillion(player?.marketValue?.value || 0)}M ${
-                    player?.marketValue?.currency
-                  }`
+              {player?.playerDetails.marketValue
+                ? `${player?.playerDetails.marketValue}M `
                 : "N/A"}
             </Typography>
 
             <Typography gutterBottom fontSize="0.8rem" component="div">
               Age:{" "}
-              {player?.birthday
+              {player?.playerDetails?.birthday
                 ? `${calculateAgeFromUnixTimestamp(
-                    player?.birthday || 0
+                    player?.playerDetails?.birthday || 0
                   )} Years `
                 : "N/A"}
             </Typography>
@@ -124,13 +142,19 @@ const SmallDescCard = ({
             <Stack direction="row" justifyContent="space-between">
               <Typography gutterBottom fontSize="0.8rem" component="div">
                 Country:{" "}
-                {getPlayerCountryDetails(player?.countryId)
-                  ? getPlayerCountryDetails(player?.countryId)?.name
+                {getPlayerCountryDetails(player?.playerDetails?.countryId)
+                  ? getPlayerCountryDetails(player?.playerDetails?.countryId)
+                      ?.name
                   : "N/A"}
               </Typography>
 
-              {getPlayerCountryDetails(player?.countryId) ? (
-                <img src={getPlayerCountryDetails(player?.countryId)?.flag} />
+              {getPlayerCountryDetails(player?.playerDetails?.countryId) ? (
+                <img
+                  src={
+                    getPlayerCountryDetails(player?.playerDetails?.countryId)
+                      ?.flag
+                  }
+                />
               ) : null}
             </Stack>
 
@@ -138,8 +162,8 @@ const SmallDescCard = ({
 
             <Typography gutterBottom fontSize="0.8rem" component="div">
               Club:{" "}
-              {getPlayerClubDetails(player?.clubId)
-                ? getPlayerClubDetails(player?.clubId)?.name
+              {getPlayerClubDetails(player?.playerDetails?.clubId)
+                ? getPlayerClubDetails(player?.playerDetails?.clubId)?.name
                 : null}
             </Typography>
             <Stack
@@ -148,20 +172,11 @@ const SmallDescCard = ({
               gap={1}
               pt={2}
             >
-              {createTeamEnable && (
-                <Button
-                  onClick={() => addPlayerToTeam(player, category)}
-                  variant="outlined"
-                >
-                  Add To Team
-                </Button>
-              )}
-
               <Button
                 variant="contained"
                 onClick={() => navigate(`/player/${player?.id}`)}
               >
-                Details
+                More Details
               </Button>
             </Stack>
           </Stack>
@@ -171,4 +186,4 @@ const SmallDescCard = ({
   );
 };
 
-export default SmallDescCard;
+export default PlayerDetailsPopupCard;

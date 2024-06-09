@@ -30,7 +30,7 @@ function Atricles() {
     },
   });
 
-  console.log(data);
+  //console.log(data);
 
   const content = data?.pages.map((todos) =>
     todos.map((todo, index) => {
@@ -43,7 +43,7 @@ function Atricles() {
 
   useEffect(() => {
     if (inView && hasNextPage) {
-      console.log("Fire!");
+      //console.log("Fire!");
       fetchNextPage();
     }
   }, [inView, hasNextPage, fetchNextPage]);
