@@ -5,30 +5,14 @@ import { Fab, Paper, Stack, Typography } from "@mui/material";
 import React from "react";
 import { isArrayAndHasContent } from "../../utils/utils";
 import PlayerIcon from "./PlayerIcon";
-import toast from "react-hot-toast";
 
-const TeamBoard = ({
+const TeamBoardOnlyView = ({
   formation,
-  setTeamViewModal,
   team,
-  hideClose,
-  setTeam,
-  formationObject,
-  setFormationObject,
+  hideClose = false,
+  setTeamViewModal,
 }) => {
-  let handlePlayerRemoveFromTeam = (id, category) => {
-    let updatedFormationObj = {
-      ...formationObject,
-      [category]: formationObject[category] + 1,
-    };
-    setFormationObject(updatedFormationObj);
-    let updatedTeam = team.filter((p) => p?.playerDetails?.id !== id);
-
-    setTeam(updatedTeam);
-    toast.error("Player Removed!", {
-      duration: 1000,
-    });
-  };
+  let handlePlayerRemoveFromTeam = (id, category) => {};
   return (
     <div
       style={{
@@ -93,6 +77,7 @@ const TeamBoard = ({
                       key={index}
                       player={player}
                       handlePlayerRemoveFromTeam={handlePlayerRemoveFromTeam}
+                      hideDelete
                     />
                   );
                 })
@@ -118,6 +103,7 @@ const TeamBoard = ({
                       key={index}
                       player={player}
                       handlePlayerRemoveFromTeam={handlePlayerRemoveFromTeam}
+                      hideDelete
                     />
                   );
                 })
@@ -136,6 +122,7 @@ const TeamBoard = ({
                       key={index}
                       player={player}
                       handlePlayerRemoveFromTeam={handlePlayerRemoveFromTeam}
+                      hideDelete
                     />
                   );
                 })
@@ -161,6 +148,7 @@ const TeamBoard = ({
                     <PlayerIcon
                       player={player}
                       handlePlayerRemoveFromTeam={handlePlayerRemoveFromTeam}
+                      hideDelete
                     />
                   </div>
                 );
@@ -171,4 +159,4 @@ const TeamBoard = ({
   );
 };
 
-export default TeamBoard;
+export default TeamBoardOnlyView;

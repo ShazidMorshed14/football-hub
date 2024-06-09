@@ -72,3 +72,15 @@ export function createFormationObject(formationString) {
 
   return formationObject;
 }
+
+const generatedIds = new Set();
+
+export function generateUniqueId() {
+  while (true) {
+    const newId = Math.floor(1000 + Math.random() * 9000);
+    if (!generatedIds.has(newId)) {
+      generatedIds.add(newId);
+      return newId;
+    }
+  }
+}

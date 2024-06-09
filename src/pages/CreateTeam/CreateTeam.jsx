@@ -33,6 +33,7 @@ import { clubList } from "../../constants/clubs";
 import CategorywisePlayers from "../../components/home/CategorywisePlayers";
 import toast from "react-hot-toast";
 import TeamBoard from "../../components/cards/TeamBoard";
+import CreateTeamForm from "../../components/forms/CreateTeamForm";
 
 const formationList = [
   {
@@ -74,12 +75,22 @@ const style = {
   boxShadow: 24,
 };
 
+const styleForSaveModal = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 450,
+  height: "30vh",
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+};
+
 const CreateTeam = () => {
   const [formation, setFormation] = useState(null);
   const [formationObject, setFormationObject] = useState(null);
-  console.log(formationObject);
   const [team, setTeam] = useState([]);
-  console.log(team);
 
   const isMobile = useMediaQuery("(max-width:600px)");
 
@@ -93,6 +104,7 @@ const CreateTeam = () => {
   const [age, setAge] = useState(null);
 
   const [teamViewModal, setTeamViewModal] = useState(false);
+  const [teamAddModal, setTeamAddModal] = useState(false);
 
   const generateAgeOptions = () => {
     let options = [];
@@ -245,7 +257,28 @@ const CreateTeam = () => {
           <TeamBoard
             formation={formation}
             setTeamViewModal={setTeamViewModal}
+            setTeam={setTeam}
             team={team}
+            formationObject={formationObject}
+            setFormationObject={setFormationObject}
+          />
+        </Box>
+      </Modal>
+
+      <Modal
+        open={teamAddModal && isArrayAndHasContent(team) && team.length == 11}
+        onClose={() => {
+          setTeamAddModal(false);
+        }}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={styleForSaveModal}>
+          <CreateTeamForm
+            formation={formation}
+            setTeamAddModal={setTeamAddModal}
+            team={team}
+            handleFormationReset={handleFormationReset}
           />
         </Box>
       </Modal>
@@ -254,8 +287,11 @@ const CreateTeam = () => {
         <Box mt="15px">
           <Typography>Create Your Own Team</Typography>
 
-          <Stack my="15px" direction="row" alignItems="center">
-            <FormControl sx={{ m: 1, minWidth: "80vw" }} size="small">
+          <Stack my="15px" direction="row" alignItems="center" flexWrap="wrap">
+            <FormControl
+              sx={{ m: 1, minWidth: isMobile ? "80vw" : "70vw" }}
+              size="small"
+            >
               <InputLabel id="demo-select-small-label">
                 Select Formation
               </InputLabel>
@@ -305,18 +341,32 @@ const CreateTeam = () => {
             >
               <Refresh />
             </Fab>
+
+            <Stack
+              direction="row"
+              gap={1}
+              sx={{
+                marginLeft: "4px",
+              }}
+            >
+              <Button
+                variant="contained"
+                disabled={team.length != 11 ? true : false}
+                onClick={() => setTeamAddModal(true)}
+              >
+                Save Team
+              </Button>
+              <Button
+                variant="contained"
+                disabled={!isArrayAndHasContent(team) ? true : false}
+                onClick={() => setTeamViewModal(true)}
+              >
+                View Team
+              </Button>
+            </Stack>
           </Stack>
 
           {/* {isArrayAndHasContent(team) && <TeamBoard team={team} />} */}
-          {isArrayAndHasContent(team) && (
-            <Button
-              variant="contained"
-              fullWidth
-              onClick={() => setTeamViewModal(true)}
-            >
-              View Team
-            </Button>
-          )}
         </Box>
 
         {formation && (
