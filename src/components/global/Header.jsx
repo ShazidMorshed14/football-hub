@@ -210,7 +210,7 @@ function Header() {
               PaperProps={{
                 style: {
                   maxHeight: "500px",
-                  width: isMobile ? "500px" : "600px",
+                  width: isMobile ? "90vw" : "600px",
                 },
               }}
             >
