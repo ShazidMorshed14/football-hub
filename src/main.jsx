@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./apps/App.jsx";
 
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
+import { createTheme } from "@mui/material/styles";
+import { Toaster } from "react-hot-toast";
 
 const darkTheme = createTheme({
   palette: {
@@ -13,6 +13,7 @@ const darkTheme = createTheme({
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <Toaster position="top-center" reverseOrder={false} />
     <App />
   </React.StrictMode>
 );

@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Card,
   CardContent,
   CardMedia,
@@ -15,7 +16,13 @@ import {
 } from "../../utils/utils";
 import PanToolIcon from "@mui/icons-material/PanTool";
 
-const SmallDescCard = ({ player, category, innerRef }) => {
+const SmallDescCard = ({
+  player,
+  category,
+  innerRef,
+  createTeamEnable,
+  addPlayerToTeam,
+}) => {
   return (
     <div ref={innerRef}>
       <Card
@@ -130,6 +137,14 @@ const SmallDescCard = ({ player, category, innerRef }) => {
                 ? getPlayerClubDetails(player?.clubId)?.name
                 : null}
             </Typography>
+
+            {createTeamEnable && (
+              <Stack>
+                <Button onClick={() => addPlayerToTeam(player, category)}>
+                  Add To Team
+                </Button>
+              </Stack>
+            )}
           </Stack>
         </CardContent>
       </Card>

@@ -20,6 +20,8 @@ const CategorywisePlayers = ({
   clubIds,
   marketValue,
   age,
+  addPlayerToTeam,
+  createTeamEnable = false,
 }) => {
   const { ref, inView } = useInView();
 
@@ -105,13 +107,21 @@ const CategorywisePlayers = ({
               key={players.id}
               player={players}
               category={type}
+              createTeamEnable={createTeamEnable}
+              addPlayerToTeam={addPlayerToTeam}
             />
           </Grid>
         );
       }
       return (
         <Grid item xs={6} sm={6} md={4} lg={3} key={player.id}>
-          <SmallDescCard key={player.id} player={player} category={type} />
+          <SmallDescCard
+            key={player.id}
+            player={player}
+            category={type}
+            createTeamEnable={createTeamEnable}
+            addPlayerToTeam={addPlayerToTeam}
+          />
         </Grid>
       );
     })
