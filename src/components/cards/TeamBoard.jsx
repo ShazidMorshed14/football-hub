@@ -32,7 +32,7 @@ const TeamBoard = ({
   return (
     <div
       style={{
-        background: `url(${Field})`,
+        background: `url('https://res.cloudinary.com/dfehazmms/image/upload/v1717939707/field_gn9rld.svg')`,
         backgroundSize: "cover",
         height: "100%",
         backgroundPosition: "center",
