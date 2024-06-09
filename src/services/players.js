@@ -1,4 +1,9 @@
-import { dummyPlayersList } from "../dummyData/dummyData";
+import {
+  dummyPlayersList,
+  dummySearchRes,
+  playerDetailsDummyResponse,
+} from "../dummyData/dummyData";
+import { isArrayAndHasContent } from "../utils/utils";
 import axios from "./axios";
 
 export const GetCategorywisePlayers = async ({
@@ -45,13 +50,14 @@ export const GetCategorywisePlayers = async ({
 
     const response = await fetch(url?.href, {
       headers: {
-        "x-rapidapi-key": "be6a7ad5a0msh53ae27cef88c26fp1e1948jsn1ad0128f6c29",
+        "x-rapidapi-key": "9e6def425cmshb53c6cabcf632bep135aa3jsnbc5ac0460ff8",
         "x-rapidapi-host": "transfermarkt-db.p.rapidapi.com",
       },
     });
 
+    console.log(response);
     const players = await response.json();
-    console.log(players);
+    //console.log(players);
 
     playerInfoResponses = [...players?.data];
 
@@ -66,7 +72,7 @@ export const GetCategorywisePlayers = async ({
     );
 
     let playerShortInfoList = playersShortInfo?.data?.data || [];
-    console.log(playerShortInfoList);
+    //console.log(playerShortInfoList);
 
     playerInfoResponses.forEach((player1) => {
       const matchingPlayer = playerShortInfoList.find(
@@ -77,7 +83,7 @@ export const GetCategorywisePlayers = async ({
       }
     });
 
-    console.log(playerInfoResponses);
+    //console.log(playerInfoResponses);
 
     return playerInfoResponses;
   } catch (Error) {
@@ -135,11 +141,11 @@ export const GetCategorywisePlayersDummy = async ({
     });
 
     const players = await response.json();
-    console.log(players);
+    //console.log(players);
 
     playerInfoResponses = [...players?.data];
 
-    console.log(playerInfoResponses);
+    //console.log(playerInfoResponses);
 
     // Extracting player IDs from the response data
     const playerIds = players?.data?.map((player) => player.id) || [];
@@ -161,13 +167,46 @@ export const GetCategorywisePlayersDummy = async ({
     //   }
     // });
 
-    console.log(playerInfoResponses);
+    //console.log(playerInfoResponses);
 
     return playerInfoResponses;
   } catch (Error) {
     console.error("Error:", Error);
     throw Error;
   }
+};
+
+export const GetPlayerProfile = async (id) => {
+  const response = await axios().get(
+    `/players/profile?locale=ES&player_id=${id}`
+  );
+  return response?.data;
+};
+export const GetPlayerProfileDummy = async (id) => {
+  let response = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      return resolve(playerDetailsDummyResponse);
+    }, [1500]);
+  });
+  return response;
+};
+
+export const SearchPlayerData = async (query) => {
+  //console.log(query);
+  let response = await axios().get(
+    `/search/full-search?page_number=0&search_type=players&locale=ES&query=${query}`
+  );
+
+  return response?.data;
+};
+
+export const SearchPlayerDataDummy = async (id) => {
+  let response = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      return resolve(dummySearchRes);
+    }, [1500]);
+  });
+  return response;
 };
 
 // export const GetCategorywisePlayers = async (params) => {

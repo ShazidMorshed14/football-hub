@@ -43,7 +43,7 @@ const CategorywisePlayers = ({
       age,
     ],
     queryFn: ({ pageParam = 1 }) =>
-      GetCategorywisePlayersDummy({
+      GetCategorywisePlayers({
         pageParam: pageParam,
         position_group: type == "ALL" ? null : type,
         country_ids: countryIds,
@@ -61,11 +61,11 @@ const CategorywisePlayers = ({
     },
   });
 
-  console.log(data);
+  //console.log(data);
 
   useEffect(() => {
     if (inView && hasNextPage) {
-      console.log("Fire!");
+      //console.log("Fire!");
       fetchNextPage();
     }
   }, [inView, hasNextPage, fetchNextPage]);
@@ -97,7 +97,7 @@ const CategorywisePlayers = ({
       </div>
     );
 
-  const content = data?.pages.map((players) =>
+  const content = data?.pages?.map((players) =>
     players.map((player, index) => {
       if (players.length === index + 1) {
         return (
@@ -126,6 +126,8 @@ const CategorywisePlayers = ({
       );
     })
   );
+
+  console.log(data);
 
   return (
     <div style={{ minHeight: "200vh" }}>

@@ -1670,3 +1670,904 @@ export const dummyPlayersList = [
     },
   },
 ];
+
+export const playerDetailsDummyResponse = {
+  data: {
+    share: {
+      title: "Lionel Messi - Perfil del jugador",
+      url: "https://www.transfermarkt.es/lionel-messi/profil/spieler/28003",
+      description: "Este es el perfil de jugador de Lionel Messi.",
+    },
+    playerProfile: {
+      playerID: "28003",
+      playerImage:
+        "https://img.a.transfermarkt.technology/portrait/medium/28003-1710080339.jpg?lm=1",
+      playerName: "Lionel Messi",
+      playerFullName: "Lionel Messi",
+      birthplace: "Rosario",
+      dateOfBirth: "24/06/1987",
+      dateOfDeath: null,
+      playerShirtNumber: "10",
+      birthplaceCountry: "Argentina",
+      birthplaceCountryImage:
+        "https://tmssl.akamaized.net/images/flagge/verysmall/9.png?lm=1520611569",
+      age: "36",
+      height: "1,70",
+      foot: "izquierdo",
+      internationalTeam: "Argentina",
+      internationalTeamImage:
+        "https://tmssl.akamaized.net/images/flagge/verysmall/9.png?lm=1520611569",
+      internationalTeamStatus: "Selección",
+      internationalGames: "180",
+      internationalGoals: "106",
+      internationalTeamShortTag: "A",
+      internationalShirtNumber: "10",
+      internationalWmMember: true,
+      internationalValueRank: 149,
+      country: "Argentina",
+      countrynameEN: "Argentina",
+      countryImage:
+        "https://tmssl.akamaized.net/images/flagge/verysmall/9.png?lm=1520611569",
+      countryShortName: "ARG",
+      secondCountry: "España",
+      secondCountryImage:
+        "https://tmssl.akamaized.net/images/flagge/verysmall/157.png?lm=1520611569",
+      league: "Major League Soccer",
+      leaguenameEN: "Major League Soccer",
+      leagueLogo:
+        "https://tmssl.akamaized.net/images/logo/normal/mls1.png?lm=1612117632",
+      clubImage:
+        "https://tmssl.akamaized.net/images/wappen/medium/69261.png?lm=1573561237",
+      club: "Inter Miami CF",
+      clubnameEN: "Inter Miami CF",
+      clubID: "69261",
+      loan: {
+        loan: "",
+        loanStart: "",
+        loanUntil: "",
+        contractOptions: "",
+        ownerName: "",
+        ownerID: "",
+        ownerImage: "",
+        ownerContractUntil: "",
+      },
+      contractExpiryDate: "31/12/2025",
+      agent: "Miembro de su familia",
+      agentId: "1207",
+      agentVerificationStatus: null,
+      agentVerificationDate: false,
+      outfitter: "",
+      positionGroup: "Sturm",
+      playerMainPosition: "Extremo derecho",
+      playerSecondPosition: "Delantero centro",
+      playerThirdPosition: "Mediapunta",
+      marketValue: "30,00",
+      marketValueCurrency: "€",
+      marketValueNumeral: "mill.",
+      marketValueLastChange: "25/03/2024",
+      relatedness: [
+        {
+          id: "55306",
+          personName: "Maxi Biancucchi",
+          personGroup: "spieler",
+          personID: "59303",
+          degreeOfRelationship: "primo",
+        },
+        {
+          id: "82727",
+          personName: "E. Biancucchi",
+          personGroup: "spieler",
+          personID: "90036",
+          degreeOfRelationship: "primo",
+        },
+      ],
+      injury: {
+        id: "",
+        title: "",
+        until: "-",
+        rehabilitationFlag: "",
+      },
+      absence: {
+        id: "",
+        title: "",
+        until: "-",
+        competitionID: "",
+        matches: "",
+      },
+      allSuspensions: [],
+    },
+    performanceSeasons: [
+      {
+        key: "2023",
+        title: "23/24",
+      },
+      {
+        key: "2022",
+        title: "22/23",
+      },
+      {
+        key: "2021",
+        title: "21/22",
+      },
+      {
+        key: "2020",
+        title: "20/21",
+      },
+      {
+        key: "2019",
+        title: "19/20",
+      },
+      {
+        key: "2018",
+        title: "18/19",
+      },
+      {
+        key: "2017",
+        title: "17/18",
+      },
+      {
+        key: "2016",
+        title: "16/17",
+      },
+      {
+        key: "2015",
+        title: "15/16",
+      },
+      {
+        key: "2014",
+        title: "14/15",
+      },
+      {
+        key: "2013",
+        title: "13/14",
+      },
+      {
+        key: "2012",
+        title: "12/13",
+      },
+      {
+        key: "2011",
+        title: "11/12",
+      },
+      {
+        key: "2010",
+        title: "10/11",
+      },
+      {
+        key: "2009",
+        title: "09/10",
+      },
+      {
+        key: "2008",
+        title: "08/09",
+      },
+      {
+        key: "2007",
+        title: "07/08",
+      },
+      {
+        key: "2006",
+        title: "06/07",
+      },
+      {
+        key: "2005",
+        title: "05/06",
+      },
+      {
+        key: "2004",
+        title: "04/05",
+      },
+      {
+        key: "2003",
+        title: "03/04",
+      },
+    ],
+    heroImages: [
+      {
+        id: "132837",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-1711467863-132837.jpg?lm=1711467875",
+        source: "IMAGO",
+      },
+      {
+        id: "120754",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-argentinien-2022-1698689902-120754.jpg?lm=1698689910",
+        source: "IMAGO",
+      },
+      {
+        id: "116540",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-inter-miami-1694590069-116540.jpg?lm=1694590099",
+        source: "imago images",
+      },
+      {
+        id: "116229",
+        url: "https://tmssl.akamaized.net/images/foto/normal/messi-lionel-2023-argentina-1694190597-116229.jpg?lm=1694190619",
+        source: "fotobaires.com",
+      },
+      {
+        id: "114379",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-1692504890-114379.jpg?lm=1692504905",
+        source: "IMAGO",
+      },
+      {
+        id: "112152",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-inter-miami-cf-1690045378-112152.jpg?lm=1690045398",
+        source: "IMAGO",
+      },
+      {
+        id: "112129",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-miami-1689969052-112129.jpeg?lm=1689969177",
+        source: "IMAGO",
+      },
+      {
+        id: "108539",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-paris-saint-germain-2023-1685872213-108539.jpg?lm=1685872230",
+        source: "IMAGO",
+      },
+      {
+        id: "98673",
+        url: "https://tmssl.akamaized.net/images/foto/normal/argentina-campeon-del-mundo-1671389672-98673.jpeg?lm=1671389733",
+        source: "IMAGO",
+      },
+      {
+        id: "98686",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-argentinien-wm-2022-1671430743-98686.jpg?lm=1671430759",
+        source: "IMAGO",
+      },
+      {
+        id: "98308",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-trifft-fur-argentinien-gegen-die-niederlande-wm-2022-1670619640-98308.jpg?lm=1670619666",
+        source: "IMAGO",
+      },
+      {
+        id: "97535",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-argentina-world-cup-2022-1669496833-97535.jpg?lm=1669496856",
+        source: "IMAGO",
+      },
+      {
+        id: "97148",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-argentina-wc-2022-1019555176h-1669130412-97148.jpg?lm=1669130439",
+        source: "IMAGO",
+      },
+      {
+        id: "93360",
+        url: "https://tmssl.akamaized.net/images/foto/normal/messi-lionel-2022-23-seleccion-argentina-1664377743-93360.jpg?lm=1664377754",
+        source: "IMAGO",
+      },
+      {
+        id: "89763",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-psg-2022-23-1659958415-89763.jpg?lm=1659958429",
+        source: "IMAGO",
+      },
+      {
+        id: "69935",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-psg-2021-1630297043-69935.jpg?lm=1630297056",
+        source: "IMAGO",
+      },
+      {
+        id: "68922",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-paris-saint-germain-2021-1628864113-68922.jpg?lm=1628864133",
+        source: "IMAGO",
+      },
+      {
+        id: "68725",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-paris-st-germain-2021-1628677399-68725.jpg?lm=1628677410",
+        source: "IMAGO",
+      },
+      {
+        id: "9885",
+        url: "https://tmssl.akamaized.net/images/foto/normal/messi-1493045428-9885.jpg?lm=1493045461",
+        source: "IMAGO",
+      },
+      {
+        id: "58808",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-fc-barcelona-2020-2021-1615872755-58808.jpg?lm=1615872773",
+        source: "IMAGO",
+      },
+      {
+        id: "39854",
+        url: "https://tmssl.akamaized.net/images/foto/normal/messi-barcelona-1590668606-39854.jpg?lm=1590668596",
+        source: "TM/IMAGO",
+      },
+      {
+        id: "20148",
+        url: "https://tmssl.akamaized.net/images/foto/normal/suarez-messi-dembele-1548687465-20148.jpg?lm=1548687490",
+        source: "IMAGO",
+      },
+      {
+        id: "41968",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-ballon-dor-2019-1592819026-41968.jpg?lm=1592819001",
+        source: "IMAGO",
+      },
+      {
+        id: "20204",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-fc-barcelona-1548770350-20204.jpg?lm=1548770369",
+        source: "IMAGO",
+      },
+      {
+        id: "26423",
+        url: "https://tmssl.akamaized.net/images/foto/normal/messi-1570628108-26423.jpg?lm=1570628121",
+        source: "IMAGO",
+      },
+      {
+        id: "25426",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-fc-barcelona-1567748810-25426.jpg?lm=1567748836",
+        source: "IMAGO",
+      },
+      {
+        id: "25004",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-transfermarkt-spieler-der-laliga-saison-2018-19-1566816872-25004.jpg?lm=1566816882",
+        source: "TM/LionelMessi",
+      },
+      {
+        id: "54096",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-fc-barcelona-1610004379-54096.jpg?lm=1610004386",
+        source: "IMAGO",
+      },
+      {
+        id: "53594",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-fc-barcelona-2020-2021-1608727492-53594.jpg?lm=1608727512",
+        source: "IMAGO",
+      },
+      {
+        id: "20199",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-luis-suarez-1548769695-20199.jpg?lm=1548769717",
+        source: "IMAGO",
+      },
+      {
+        id: "20203",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-1548770181-20203.jpg?lm=1548770203",
+        source: "IMAGO",
+      },
+      {
+        id: "12154",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-1506921740-12154.jpg?lm=1506921752",
+        source: "IMAGO",
+      },
+      {
+        id: "12248",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-1507649274-12248.jpg?lm=1507649293",
+        source: "IMAGO",
+      },
+      {
+        id: "6504",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-1478622373-6504.jpg?lm=1483606205",
+        source: "IMAGO",
+      },
+      {
+        id: "5804",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-1471008317-5804.jpg?lm=1483606110",
+        source: "IMAGO",
+      },
+      {
+        id: "5622",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-1467208453-5622.jpg?lm=1483606087",
+        source: "IMAGO",
+      },
+      {
+        id: "4925",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-1454508603-4925.jpg?lm=1483606013",
+        source: "IMAGO",
+      },
+      {
+        id: "4609",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-1421073766-4609.jpg?lm=1483605977",
+        source: "IMAGO",
+      },
+      {
+        id: "224",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-1401789362-224.jpg?lm=1483605491",
+        source: "Getty Images",
+      },
+      {
+        id: "219",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-1401786445-219.jpg?lm=1483605491",
+        source: "Getty Images",
+      },
+      {
+        id: "218",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-1401786427-218.jpg?lm=1483605491",
+        source: "Getty Images",
+      },
+      {
+        id: "37588",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-2007-1588590273-37588.jpg?lm=1588590278",
+        source: "IMAGO",
+      },
+      {
+        id: "6134",
+        url: "https://tmssl.akamaized.net/images/foto/normal/lionel-messi-1473415845-6134.jpg?lm=1483606150",
+        source: "IMAGO",
+      },
+    ],
+  },
+};
+
+export const dummySearchRes = {
+  data: {
+    count: {
+      players: 543,
+      coaches: 39,
+      clubs: 58,
+      competitions: 1,
+      referees: 35,
+    },
+    players: [
+      {
+        id: "28003",
+        playerName: "Lionel Messi",
+        firstName: "Lionel",
+        lastName: "Messi",
+        alias: "",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/9.png?lm=1520611569",
+        club: "Inter Miami CF",
+        playerImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/28003-1710080339.jpg?lm=1",
+      },
+      {
+        id: "449151",
+        playerName: "Junior Messias",
+        firstName: "Junior",
+        lastName: "Messias",
+        alias: "",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/26.png?lm=1520611569",
+        club: "Genua CFC",
+        playerImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/449151-1663575000.jpg?lm=1",
+      },
+      {
+        id: "744024",
+        playerName: "João Marcelo",
+        firstName: "João",
+        lastName: "Marcelo Messias Ferreira",
+        alias: "João Marcelo",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/26.png?lm=1520611569",
+        club: "EC Cruzeiro Belo Horizonte",
+        playerImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/744024-1697289524.jpg?lm=1",
+      },
+      {
+        id: "393581",
+        playerName: "Bruno Almeida",
+        firstName: "Bruno",
+        lastName: "Almeida",
+        alias: "",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/136.png?lm=1520611569",
+        club: "CD Santa Clara",
+        playerImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/393581-1716925058.jpeg?lm=1",
+      },
+      {
+        id: "545400",
+        playerName: "Billal Messaoudi",
+        firstName: "Billal",
+        lastName: "Messaoudi",
+        alias: "",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/4.png?lm=1520611569",
+        club: "Göztepe",
+        playerImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/545400-1700837753.png?lm=1",
+      },
+      {
+        id: "401539",
+        playerName: "Messias",
+        firstName: "Messias",
+        lastName: "Rodrigues da Silva Júnior",
+        alias: "Messias",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/26.png?lm=1520611569",
+        club: "Goiás EC",
+        playerImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/401539-1706143074.jpg?lm=1",
+      },
+      {
+        id: "303939",
+        playerName: "Ahmed El Messaoudi",
+        firstName: "Ahmed",
+        lastName: "El Messaoudi",
+        alias: "",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/107.png?lm=1520611569",
+        club: "Tobol Kostanay",
+        playerImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/303939-1709555970.png?lm=1",
+      },
+      {
+        id: "501087",
+        playerName: "Soufiane Messeguem",
+        firstName: "Soufiane",
+        lastName: "Messeguem",
+        alias: "",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/40.png?lm=1520612525",
+        club: "Académico Viseu FC",
+        playerImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/501087-1611693573.jpg?lm=1",
+      },
+      {
+        id: "417634",
+        playerName: "Alexis Messidoro",
+        firstName: "Alexis",
+        lastName: "Messidoro",
+        alias: "",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/9.png?lm=1520611569",
+        club: "PERSIS Solo",
+        playerImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/417634-1689734958.jpg?lm=1",
+      },
+      {
+        id: "934154",
+        playerName: "Amine Messoussa",
+        firstName: "Amine",
+        lastName: "Messoussa",
+        alias: "",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/50.png?lm=1520611569",
+        club: "FC Villefranche-Beaujolais",
+        playerImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/934154-1711305526.jpg?lm=1",
+      },
+    ],
+    coaches: [
+      {
+        id: "8954",
+        coachImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=1",
+        coachName: "Nourreddine Messelmani",
+        firstName: "Nourreddine",
+        lastName: "Messelmani",
+        alias: "",
+        currentFunction: "Physiotherapeut",
+        club: "Vereinslos",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/40.png?lm=1520612525",
+      },
+      {
+        id: "12726",
+        coachImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=1",
+        coachName: "Hans Messing",
+        firstName: "Hans",
+        lastName: "Messing",
+        alias: "",
+        currentFunction: "Betreuer",
+        club: "Vereinslos",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/40.png?lm=1520612525",
+      },
+      {
+        id: "19704",
+        coachImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=1",
+        coachName: "Luc-Arsène Diamesso",
+        firstName: "Luc-Arsène",
+        lastName: "Diamesso",
+        alias: "",
+        currentFunction: "Trainer",
+        club: "SV Molbergen",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/85.png?lm=1520611569",
+      },
+      {
+        id: "22598",
+        coachImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=1",
+        coachName: "Kurt Messner",
+        firstName: "Kurt",
+        lastName: "Messner",
+        alias: "",
+        currentFunction: "Trainer",
+        club: "---",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/127.png?lm=1520611569",
+      },
+      {
+        id: "29420",
+        coachImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/29420-1693178668.png?lm=1",
+        coachName: "Gernot Messner",
+        firstName: "Gernot",
+        lastName: "Messner",
+        alias: "",
+        currentFunction: "Trainer",
+        club: "Grazer AK 1902",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/127.png?lm=1520611569",
+      },
+      {
+        id: "31667",
+        coachImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=1",
+        coachName: "Ovidio Messa",
+        firstName: "Ovidio",
+        lastName: "Messa",
+        alias: "",
+        currentFunction: "Trainer",
+        club: "---",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/23.png?lm=1520611569",
+      },
+      {
+        id: "32005",
+        coachImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=1",
+        coachName: "Nico Messina",
+        firstName: "Nico",
+        lastName: "Messina",
+        alias: "",
+        currentFunction: "Co-Trainer",
+        club: "SV Reislingen/Neuhaus",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/75.png?lm=1520611569",
+      },
+      {
+        id: "33751",
+        coachImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=1",
+        coachName: "Volker Messner",
+        firstName: "Volker",
+        lastName: "Messner",
+        alias: "",
+        currentFunction: "Trainer",
+        club: "Vereinslos",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/40.png?lm=1520612525",
+      },
+      {
+        id: "36982",
+        coachImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=1",
+        coachName: "Marcelo Messina",
+        firstName: "Marcelo",
+        lastName: "Messina",
+        alias: "",
+        currentFunction: "Trainer",
+        club: "CD Alfonso Ugarte de Puno",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/9.png?lm=1520611569",
+      },
+      {
+        id: "37818",
+        coachImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/37818-1503248217.jpg?lm=1",
+        coachName: "Patrick Messow",
+        firstName: "Patrick",
+        lastName: "Messow",
+        alias: "",
+        currentFunction: "Sportdirektor",
+        club: "Atlético Baleares",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/40.png?lm=1520612525",
+      },
+    ],
+    clubs: [
+      {
+        id: "6303",
+        league: "FS",
+        competitionID: "FS",
+        competitionName: "Freundschaftsspiele",
+        name: "Mexiko",
+        logoImage:
+          "https://tmssl.akamaized.net/images/wappen/medium/6303.png?lm=1638391347",
+      },
+      {
+        id: "16418",
+        league: "FS",
+        competitionID: "FS",
+        competitionName: "Freundschaftsspiele",
+        name: "Mexiko U23",
+        logoImage:
+          "https://tmssl.akamaized.net/images/wappen/medium/16418.png?lm=1638391347",
+      },
+      {
+        id: "26092",
+        league: "FS",
+        competitionID: "FS",
+        competitionName: "Freundschaftsspiele",
+        name: "Mexiko U20",
+        logoImage:
+          "https://tmssl.akamaized.net/images/wappen/medium/26092.png?lm=1638391347",
+      },
+      {
+        id: "1104",
+        league: "IT3C",
+        competitionID: "IT3C",
+        competitionName: "Serie C - C",
+        name: "ACR Messina",
+        logoImage:
+          "https://tmssl.akamaized.net/images/wappen/medium/1104.png?lm=1569236748",
+      },
+      {
+        id: "47231",
+        league: "FS",
+        competitionID: "FS",
+        competitionName: "Freundschaftsspiele",
+        name: "Mexiko U16",
+        logoImage:
+          "https://tmssl.akamaized.net/images/wappen/medium/47231.png?lm=1638391348",
+      },
+      {
+        id: "51023",
+        league: "FS",
+        competitionID: "FS",
+        competitionName: "Freundschaftsspiele",
+        name: "Mexiko U18",
+        logoImage:
+          "https://tmssl.akamaized.net/images/wappen/medium/51023.png?lm=1638391347",
+      },
+      {
+        id: "23134",
+        league: "FS",
+        competitionID: "FS",
+        competitionName: "Freundschaftsspiele",
+        name: "Mexiko U17",
+        logoImage:
+          "https://tmssl.akamaized.net/images/wappen/medium/23134.png?lm=1638391347",
+      },
+      {
+        id: "48724",
+        league: "FS",
+        competitionID: "FS",
+        competitionName: "Freundschaftsspiele",
+        name: "Mexiko U15",
+        logoImage:
+          "https://tmssl.akamaized.net/images/wappen/medium/48724.png?lm=1638391348",
+      },
+      {
+        id: "92717",
+        league: "FS",
+        competitionID: "FS",
+        competitionName: "Freundschaftsspiele",
+        name: "Mexiko U19",
+        logoImage:
+          "https://tmssl.akamaized.net/images/wappen/medium/default.png?lm=1457423031",
+      },
+      {
+        id: "84940",
+        league: "",
+        competitionID: "",
+        competitionName: "",
+        name: "FC Guipry-Messac",
+        logoImage:
+          "https://tmssl.akamaized.net/images/wappen/medium/84940.png?lm=1616780488",
+      },
+    ],
+    referees: [
+      {
+        id: "218",
+        refereeImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=1",
+        refereeName: "Stefan Meßner",
+        firstName: "Stefan",
+        lastName: "Meßner",
+        alias: "",
+        club: "Unbekannt",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/127.png?lm=1520611569",
+      },
+      {
+        id: "305",
+        refereeImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/305-1404475204.jpg?lm=1",
+        refereeName: "Domenico Messina",
+        firstName: "Domenico",
+        lastName: "Messina",
+        alias: "",
+        club: "Karriereende",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/75.png?lm=1520611569",
+      },
+      {
+        id: "316",
+        refereeImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=1",
+        refereeName: "Matthew Messias",
+        firstName: "Matthew",
+        lastName: "Messias",
+        alias: "",
+        club: "Unbekannt",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/189.png?lm=1520611569",
+      },
+      {
+        id: "2908",
+        refereeImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=1",
+        refereeName: "Jürgen Messmer",
+        firstName: "Jürgen",
+        lastName: "Messmer",
+        alias: "",
+        club: "Karriereende",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/40.png?lm=1520612525",
+      },
+      {
+        id: "2993",
+        refereeImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=1",
+        refereeName: "Michael Messenbäck",
+        firstName: "Michael",
+        lastName: "Messenbäck",
+        alias: "",
+        club: "Unbekannt",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/127.png?lm=1520611569",
+      },
+      {
+        id: "3726",
+        refereeImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=1",
+        refereeName: "Riadh Messai",
+        firstName: "Riadh",
+        lastName: "Messai",
+        alias: "",
+        club: "Unbekannt",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/173.png?lm=1520611569",
+      },
+      {
+        id: "4865",
+        refereeImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=1",
+        refereeName: "Günter Messner",
+        firstName: "Günter",
+        lastName: "Messner",
+        alias: "",
+        club: "Unbekannt",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/127.png?lm=1520611569",
+      },
+      {
+        id: "6563",
+        refereeImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=1",
+        refereeName: "Messie Nkounkou",
+        firstName: "Messie",
+        lastName: "Nkounkou",
+        alias: "",
+        club: "Unbekannt",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/85.png?lm=1520611569",
+      },
+      {
+        id: "7554",
+        refereeImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=1",
+        refereeName: "Marc Messinger",
+        firstName: "Marc",
+        lastName: "Messinger",
+        alias: "",
+        club: "Unbekannt",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/40.png?lm=1520612525",
+      },
+      {
+        id: "7788",
+        refereeImage:
+          "https://img.a.transfermarkt.technology/portrait/medium/default.jpg?lm=1",
+        refereeName: "Christian Messerli",
+        firstName: "Christian",
+        lastName: "Messerli",
+        alias: "",
+        club: "Unbekannt",
+        nationImage:
+          "https://tmssl.akamaized.net/images/flagge/verysmall/148.png?lm=1520611569",
+      },
+    ],
+    competitions: [
+      {
+        id: "MSPO",
+        competitionName: "Messestädte-Pokal (-1971)",
+        competitionImage:
+          "https://tmssl.akamaized.net/images/logo/medium/mspo.png?lm=1587466151",
+        country: "",
+        countryImage: "",
+      },
+    ],
+  },
+};

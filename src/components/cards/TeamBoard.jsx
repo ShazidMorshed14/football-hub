@@ -79,7 +79,7 @@ const TeamBoard = ({
           direction="row"
           justifyContent="space-around"
           style={{
-            minHeight: "15vh",
+            minHeight: "10vh",
           }}
         >
           {isArrayAndHasContent(
@@ -102,9 +102,9 @@ const TeamBoard = ({
         <Stack
           direction="row"
           justifyContent="space-around"
-          my="4em"
+          mt="2em"
           style={{
-            minHeight: "15vh",
+            minHeight: "10vh",
           }}
         >
           {isArrayAndHasContent(
@@ -124,7 +124,7 @@ const TeamBoard = ({
             : null}
         </Stack>
 
-        <Stack direction="row" justifyContent="space-around" mt="0em">
+        <Stack direction="row" justifyContent="space-around" my="2em">
           {isArrayAndHasContent(
             team?.filter((item) => item.category == "DEFENDER")
           )

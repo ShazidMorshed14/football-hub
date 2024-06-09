@@ -15,11 +15,13 @@ import AdbIcon from "@mui/icons-material/Adb";
 import { useNavigate } from "react-router-dom";
 import { InputOutlined } from "@mui/icons-material";
 import SearchIcon from "@mui/icons-material/Search";
-import { TextField } from "@mui/material";
+import { Stack, TextField } from "@mui/material";
 
 import AddIcon from "@mui/icons-material/Add";
 import GroupsIcon from "@mui/icons-material/Groups";
 import SportsSoccerIcon from "@mui/icons-material/SportsSoccer";
+import SearchDropDown from "./SearchDropDown";
+import SearchItemWrapper from "./SearchItemWrapper";
 
 const pages = [
   {
@@ -211,15 +213,7 @@ function Header() {
               }}
             >
               <MenuItem>
-                <TextField
-                  id="outlined-basic"
-                  label="Search Player"
-                  variant="outlined"
-                  placeholder="Search player..."
-                  fullWidth
-                  size="sm"
-                  color="warning"
-                />
+                <SearchItemWrapper handleCloseUserMenu={handleCloseUserMenu} />
               </MenuItem>
               {/* {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
