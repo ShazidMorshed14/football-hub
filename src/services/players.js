@@ -30,6 +30,8 @@ export const GetCategorywisePlayers = async ({
       paramsObj.country_ids = country_ids;
     }
     if (club_ids) {
+      paramsObj.locale = "DE";
+      paramsObj.page_number = 0;
       paramsObj.club_ids = club_ids;
     }
     if (market_value_max && market_value_max !== "") {

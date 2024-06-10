@@ -101,15 +101,18 @@ const CategorywisePlayers = ({
     players.map((player, index) => {
       if (players.length === index + 1) {
         return (
-          <Grid item xs={12} sm={12} md={4} lg={3} key={player.id}>
-            <SmallDescCard
-              innerRef={ref}
-              key={players.id}
-              player={players}
-              category={type}
-              createTeamEnable={createTeamEnable}
-              addPlayerToTeam={addPlayerToTeam}
-            />
+          // <Grid item xs={12} sm={12} md={4} lg={3} key={player.id}>
+          //   <SmallDescCard
+          //     innerRef={ref}
+          //     key={players.id}
+          //     player={players}
+          //     category={type}
+          //     createTeamEnable={createTeamEnable}
+          //     addPlayerToTeam={addPlayerToTeam}
+          //   />
+          // </Grid>
+          <Grid item xs={12} sm={12} md={4} lg={3} key={"loader"}>
+            <Skeleton variant="rectangular" width={"100%"} height={"60vh"} />
           </Grid>
         );
       }
@@ -140,9 +143,13 @@ const CategorywisePlayers = ({
             columns={{ xs: 12, sm: 12, md: 12, lg: 12 }}
           >
             {content}
-            {!isFetchingNextPage && (
+            {isFetchingNextPage && (
               <Grid item xs={12} sm={12} md={4} lg={3} key={"loader"}>
-                <Skeleton variant="rectangular" width={300} height={450} />
+                <Skeleton
+                  variant="rectangular"
+                  width={"100%"}
+                  height={"60vh"}
+                />
               </Grid>
             )}
           </Grid>
