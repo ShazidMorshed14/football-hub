@@ -130,7 +130,7 @@ const CategorywisePlayers = ({
     })
   );
 
-  console.log(data);
+  //console.log(data);
 
   return (
     <div style={{ minHeight: "200vh" }}>

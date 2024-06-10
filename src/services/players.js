@@ -52,18 +52,18 @@ export const GetCategorywisePlayers = async ({
 
     const response = await fetch(url?.href, {
       headers: {
-        "x-rapidapi-key": "9e6def425cmshb53c6cabcf632bep135aa3jsnbc5ac0460ff8",
+        "x-rapidapi-key": "8a192d7bb5msh8da1d08ea8d1adap1ac637jsn9da29d4f832d",
         "x-rapidapi-host": "transfermarkt-db.p.rapidapi.com",
       },
     });
 
-    console.log(response);
+    //console.log(response);
     const players = await response.json();
     //console.log(players);
 
     playerInfoResponses = [...players?.data];
 
-    console.log(playerInfoResponses);
+    //console.log(playerInfoResponses);
 
     // Extracting player IDs from the response data
     const playerIds = players?.data?.map((player) => player.id) || [];

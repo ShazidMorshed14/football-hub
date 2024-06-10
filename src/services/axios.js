@@ -13,7 +13,7 @@ export default (baseURL = "https://transfermarkt-db.p.rapidapi.com/v1") => {
       "Content-Type": config.headers["Content-Type"]
         ? config.headers["Content-Type"]
         : "application/json",
-      "x-rapidapi-key": "9e6def425cmshb53c6cabcf632bep135aa3jsnbc5ac0460ff8",
+      "x-rapidapi-key": "8a192d7bb5msh8da1d08ea8d1adap1ac637jsn9da29d4f832d",
       "x-rapidapi-host": "transfermarkt-db.p.rapidapi.com",
     };
     return config;
